@@ -23,18 +23,7 @@ return `
 `;
 };
 
-// const showDetail = (post) => {
-//   const postDiv = document.getElementById("close-box");
-//   const postString = JSON.stringify(post);
-//   postDiv.innerHTML = `     
-//     <h2>${post.userId}</h2>
-//     <p><strong>Id:</strong> ${post.id}</p>
-//     <p><strong>Title:</strong> ${post.title}</p>
-//     <p><strong>Body:</strong> ${post.body}</p>
-//     <button class="btn" onclick='closePostInfo(${postString})'>Close Post Info</button>
-//   `;
-//   document.getElementById("myModal").style.display = "block";
-// };
+
 const showDetail = (post) => {
 const postInfoDiv = document.getElementById("modal-box")
 const postString = JSON.stringify(post)
@@ -62,22 +51,6 @@ postInfoDiv.innerHTML = modalContent
 document.getElementById("myModal").style.display = "block";
 }
 
-// Function to save the modal
-function savePostInfo() {
-// document.getElementById("myModal").style.display = "none";
-const modal = document.getElementById("myModal")
-modal.parentNode.removeChild(modal)
-}
-// Function to close the modal
-function closePostInfo() {
-// document.getElementById("myModal").style.display = "none";
-const modal = document.getElementById("myModal")
-modal.parentNode.removeChild(modal)
-}
-
-
-
-
 const generatePostCardList = (postList) => {
 const content = `
       <h1 class="title">Content</h1>
@@ -88,16 +61,14 @@ const content = `
   `;
 return content;
 };
-// Function to close the modal
-function closeModal() {
-document.getElementById("myModal").style.display = "none";
-}
 
-// Function to log user info
-function closePostInfo(posts) {
-console.log("Post Info:", posts);
-closeModal();
-}
+function closePostInfo() {
+  // document.getElementById("myModal").style.display = "none";
+  const modal = document.getElementById("myModal")
+  modal.parentNode.removeChild(modal)
+  }
+
+
 fetchPostList().then((data) => {
 contentDiv.innerHTML = generatePostCardList(data);
 });
