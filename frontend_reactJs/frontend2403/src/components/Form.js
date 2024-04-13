@@ -25,7 +25,15 @@ function Form() {
         console.log("gender", gender)
     }
     const handleSubmit = () => {
-        setIsSubmit(true)
+        setIsSubmit(true);
+        alert(`
+        FullName: ${fullName}, 
+        Age: ${age},  
+        Gender: ${gender} 
+        Skill: ${selectedSkill}, 
+        About you: ${aboutYou}
+        `)
+
     }
     const handleClear = () => {
         setIsSubmit(false);
@@ -45,43 +53,41 @@ function Form() {
             setSelectedSkill(selectedSkill.filter((param) => param !== value));
         }
     };
-    const display = (
-        <div className="form-submit-result">
-            <h2>Sample Form Container</h2>
-            <div>
-                <p>Full Name: {fullName}</p>
-            </div>
-            <div>
-                <p>Age: {age}</p>
-            </div>
-            <div>
-                <p>Render</p>
-                <select className="input-render" name="myRender"
-                    value={gender}
-                    onChange={onChangeGenner}
-                    disabled>
-                    {/* <option value="default">Select Render</option> */}
-                    <option value="" selected>Select Gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Others</option> </select>
-            </div>
-            <div>
-                <p>Skill</p>
-                <div>
-                    <ul>
-                        {selectedSkill.map((select) => (
-                            <li key={select}>{select}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <p>About you</p>
-                <p>{aboutYou}</p>
-            </div>
-        </div >
-    )
+    // const display = (
+    //     <div className="form-submit-result">
+    //         <h2>Sample Form Container</h2>
+    //         <div>
+    //             <p>Full Name: {fullName}</p>
+    //         </div>
+    //         <div>
+    //             <p>Age: {age}</p>
+    //         </div>
+    //         <div>
+    //             <p>Render</p>
+    //             <select className="input-render" name="myRender"
+    //                 value={gender}
+    //                 onChange={onChangeGenner}
+    //                 disabled>
+    //                 {/* <option value="default">Select Render</option> */}
+    //                 <option value="Select Gender" selected>Select Gender</option>
+    //                 <option value="Male">Male</option>
+    //                 <option value="Female">Female</option>
+    //                 <option value="Others">Others</option> </select>
+    //         </div>
+    //         <div>
+    //             <p>Skill</p>
+    //             <div>
+    //                 <ul>
+    //                     {selectedSkill.map((select) => (select))}
+    //                 </ul>
+    //             </div>
+    //         </div>
+    //         <div>
+    //             <p>About you</p>
+    //             <p>{aboutYou}</p>
+    //         </div>
+    //     </div >
+    // )
     return (
         <>
             <div className="form-submit">
@@ -174,15 +180,15 @@ function Form() {
                         placeholder="Describe your past experience and skills"
                         value={aboutYou}
                         onChange={onChangeAboutYou}
-                    ></textarea>
+                    />
                 </div>
                 <div className="button">
                     <button className="btn-submit"
-                        onClick={handleSubmit}>Submit</button>
+                        onClick={handleSubmit}>Submit </button>
                     <button onClick={handleClear}>Clear</button>
                 </div>
             </div >
-            {isSubmit ? display : null}
+            {/* {isSubmit ? display : null} */}
         </>
 
     )

@@ -120,14 +120,14 @@ function FormSubmit() {
                 <div>
                     <p><strong>Favorite</strong></p>
 
-                    {selectedObjects.map((select) => (
+                    {selectedObjects.map((objects) => (
                         <label>
                             <input
                                 type="checkbox"
                                 name="favorite"
                                 checked
                                 disabled
-                            />{select}
+                            />{objects}
                         </label>
                     ))}
                 </div>
@@ -141,10 +141,10 @@ function FormSubmit() {
                     value={inputAddress}
                     disabled
                 >
-                    <option value='' selected>Select Address</option>
-                    <option value='1'>Long An</option>
-                    <option value='2'>Ha Noi</option>
-                    <option value='3'>Thanh pho HCM</option>
+                    <option value='Select Address' selected>Select Address</option>
+                    <option value='Long An'>Long An</option>
+                    <option value='Ha Noi'>Ha Noi</option>
+                    <option value='Thanh pho HCM'>Thanh pho HCM</option>
                 </select>
             </div>
 

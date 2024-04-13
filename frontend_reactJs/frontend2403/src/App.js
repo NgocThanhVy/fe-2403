@@ -91,6 +91,7 @@ const App = () => {
       <CardComponent />
       {/* <Card1 /> */}
       <CardGroup />
+      < Fragment />
       <Form />
       <FormSubmit />
     </div >

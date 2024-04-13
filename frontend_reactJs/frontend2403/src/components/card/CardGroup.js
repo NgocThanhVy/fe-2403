@@ -27,7 +27,7 @@ const CardGroup = () => {
         <div className="card-container">
             {cards.map((item, index) => {
                 return (
-                    <div className="card">
+                    <div className="card" key={item.id}>
                         <div className="card__img">
                             <img src={item.img} />
                         </div>
@@ -36,7 +36,7 @@ const CardGroup = () => {
                             <p className="card-desc">{item.desc}</p>
                         </div>
                     </div>
-                )
+                );
             })}
             {/* <div className="card">
                 <div className="card-img">
