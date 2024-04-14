@@ -276,10 +276,10 @@ function FormSubmit() {
                         onChange={onChangeinputAddress}
                         value={inputAddress}
                     >
-                        <option value="" selected>Select Address</option>
-                        <option value="1">Long An</option>
-                        <option value="2">Ha Noi</option>
-                        <option value="3">Thanh pho HCM</option>
+                        <option value="Select Address" selected>Select Address</option>
+                        <option value="Long An">Long An</option>
+                        <option value="Ha Noi">Ha Noi</option>
+                        <option value="Thanh pho HCM">Thanh pho HCM</option>
                     </select>
                 </div>
 
