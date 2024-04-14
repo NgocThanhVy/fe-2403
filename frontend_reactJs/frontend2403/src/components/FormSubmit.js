@@ -124,7 +124,7 @@ function FormSubmit() {
                         <label>
                             <input
                                 type="checkbox"
-                                name="favorite"
+                                name="objects"
                                 checked
                                 disabled
                             />{objects}

@@ -108,7 +108,7 @@ function Form() {
                     <p>Render</p>
                     <select
                         className="input-render"
-                        name="myDrop"
+                        name="myrender"
                         className="input-render"
                         onChange={onChangeGenner}
                         value={gender}
