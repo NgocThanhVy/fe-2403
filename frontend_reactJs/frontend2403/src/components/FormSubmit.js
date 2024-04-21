@@ -14,6 +14,13 @@ function FormSubmit() {
     const [file, setFile] = useState('empty')
     const [isSubmit, setIsSubmit] = useState(false);
 
+    const [inputs, setInputs] = useState("");
+    const [displayName, setDisplayName] = useState("");
+    const [error, setError] = useState("");
+
+
+
+
     const onChangeFullName = (event) => {
         setFullName(event.target.value)
     };
@@ -76,6 +83,27 @@ function FormSubmit() {
     const handleSubmit = () => {
         setIsSubmit(true)
     };
+
+    const onChangeInputs = (event) => {
+        setInputs(event.target.value)
+
+    };
+
+    const onSubmits = () => {
+        if (!inputs.length) {
+            setError("this is not a valid")
+        } else {
+            setDisplayName(inputs)
+        }
+    }
+
+    const handleKeyDown = (event) => {
+
+        if (event.key === 'Enter') {
+
+            onSubmits()
+        };
+    }
 
     const display = (
         <div className='form-submit'>
@@ -309,6 +337,28 @@ function FormSubmit() {
             </div >
 
             {isSubmit ? display : null}
+            <p className="displays"> {displayName}</p>
+            <div className="inputs">
+                <div>
+                    <input className="inputs" placeholder="abc"
+                        onChange={onChangeInputs}
+                        onKeyDown={handleKeyDown}
+                        value={inputs}
+                    />
+                </div>
+                <div>
+                    <button onClick={onSubmits}>Button</button>
+                </div>
+            </div>
+
+            {/* <div className="question3">
+                <div className="question_textfield">
+                    <input type="text" className="question3_input" name="fullName" />
+                    <button type="button" className="question3_button"></button>
+                </div>
+                <div className="question__nsg"></div>
+            </div> */}
+
         </>
     )
 }

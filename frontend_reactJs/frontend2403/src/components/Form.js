@@ -44,14 +44,15 @@ function Form() {
         setSelectedSkill([]);
     }
     const handleCheckSkill = (event) => {
-        const value = event.target.value;
-        const isChecked = event.target.checked;
+        // const value = event.target.value;
+        // const isChecked = event.target.checked;
 
-        if (isChecked) {
-            setSelectedSkill([...selectedSkill, value]);
-        } else {
-            setSelectedSkill(selectedSkill.filter((param) => param !== value));
-        }
+        // if (isChecked) {
+        //     setSelectedSkill([...selectedSkill, value]);
+        // } else {
+        //     setSelectedSkill(selectedSkill.filter((param) => param !== value));
+        // }
+        setSelectedSkill([...selectedSkill, event.target.value]);
     };
     // const display = (
     //     <div className="form-submit-result">
@@ -101,7 +102,7 @@ function Form() {
                 </div>
                 <div>
                     <p>Age</p>
-                    <input className="input-age" placeholder="Enter your age"
+                    <input type="number" className="input-age" placeholder="Enter your age"
                         onChange={onChangeAge} value={age} />
                 </div>
                 <div>
@@ -132,7 +133,7 @@ function Form() {
                                 type="checkbox"
                                 name="select"
                                 value="Programming"
-                                checked={selectedSkill.includes('Programming')}
+                                // checked={selectedSkill.includes('Programming')}
                                 onChange={handleCheckSkill}
                             />
                             Programming
@@ -142,7 +143,7 @@ function Form() {
                                 type="checkbox"
                                 name="select"
                                 value="Development"
-                                checked={selectedSkill.includes('Development')}
+                                // checked={selectedSkill.includes('Development')}
                                 onChange={handleCheckSkill}
                             />
                             Development
@@ -152,7 +153,7 @@ function Form() {
                                 type="checkbox"
                                 name="select"
                                 value="Design"
-                                checked={selectedSkill.includes('Design')}
+                                // checked={selectedSkill.includes('Design')}
                                 onChange={handleCheckSkill}
                             />
                             Design
@@ -162,7 +163,7 @@ function Form() {
                                 type="checkbox"
                                 name="select"
                                 value="Testing"
-                                checked={selectedSkill.includes('Testing')}
+                                // checked={selectedSkill.includes('Testing')}
                                 onChange={handleCheckSkill}
                             />
                             Testing

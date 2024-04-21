@@ -7,6 +7,15 @@ import CardGroup from "./components/card/CardGroup";
 import { Fragment } from "./components/Fragment";
 import { FormSubmit } from "./components/FormSubmit";
 import { Form } from "./components/Form";
+import { Question4 } from "./components/Question4";
+import { Question2 } from "./components/Question2";
+import { Question6 } from "./components/Question6";
+import CardList from "./components/card/CardList";
+import PersonDisplay from "./components/card/PersonDisplay";
+import HomePage from "./components/HomePage/HomePage";
+import Person from './components/card/Person';
+import FormPage from "./components/ComponentBottom/FormPage";
+
 
 const App = () => {
   const showMessage = () => {
@@ -88,12 +97,23 @@ const App = () => {
 
         </div>
       </div>
+
       <CardComponent />
       {/* <Card1 /> */}
       <CardGroup />
+      <CardList />
+      <Person />
       < Fragment />
       <Form />
-      <FormSubmit />
+      {/* <FormSubmit /> */}
+
+      <Question4 />
+      <Question2 />
+      <Question6 />
+      <HomePage />
+
+
+      <FormPage />
     </div >
   )
 }

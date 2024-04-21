@@ -104,3 +104,30 @@ h1 {
     background-color: blue;
     color: #fff;
 }
+
+.inputs {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.inputs input {
+    padding: 10px 40px;
+}
+
+.inputs button {
+    padding: 10px 40px;
+}
+
+.displays {
+    display: flex;
+    justify-content: center;
+
+}
+
+.coppy {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
