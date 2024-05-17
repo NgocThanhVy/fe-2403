@@ -2,7 +2,7 @@ import React from 'react';
 import PersonDisplay from './PersonDisplay';
 
 
-const Person = (props) => {
+const Person = () => {
     const info = [
         {
             id: '1',

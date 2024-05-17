@@ -1,0 +1,24 @@
+.body {
+    text-align: center;
+
+}
+
+.bodyH {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
+    background-color: blueviolet;
+}
+
+.bodyV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
+    background-color: rgb(186, 210, 88);
+}

@@ -1,0 +1,33 @@
+.question {
+    text-align: center;
+
+}
+
+.question3 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.question3_input {
+    width: 300px;
+    height: 30px;
+}
+
+.question3_button {
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    background-color: hsl(247, 89%, 46%);
+    color: #fff;
+}
+
+.question3_button:hover {
+    transform: scale(0.9);
+}
+
+.question3_error {
+    color: red;
+    font-size: 16px;
+}

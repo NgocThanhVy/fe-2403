@@ -1,0 +1,97 @@
+.heading {
+    text-align: center;
+    color: #fff;
+    background-color: var(--var-c--pink);
+    padding: 20px 0;
+    letter-spacing: 2px;
+}
+
+/* p,
+h1 {
+    text-align: center;
+    padding: 10px 0;
+} */
+
+.btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background: green;
+    color: #fff;
+
+}
+
+.btn-incre {
+    background: red;
+
+}
+
+.odd {
+    color: red;
+}
+
+.even {
+    color: blue;
+}
+
+.form {
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    padding: 30px 0;
+    height: 30px;
+}
+
+.form_input input {
+    width: 300px;
+    display: inline-block;
+    height: 30px;
+}
+
+.form-btn button {
+    height: 30px;
+    background: var(--var-c--pink);
+    display: inline-block;
+    border: 0;
+    font-size: 18px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.form-submit {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -0%);
+    font-size: 20px;
+}
+
+.form-submit div {
+    padding: 15px 0;
+
+}
+
+.input-fullname,
+.input-age,
+.input-render {
+    height: 30px;
+    width: 500px;
+}
+
+.input-desc {
+    height: 200px;
+    width: 500px;
+}
+
+.button button {
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.btn-submit {
+    background-color: blue;
+    color: #fff;
+}

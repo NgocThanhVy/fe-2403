@@ -1,0 +1,96 @@
+import React, { useState } from "react";
+
+
+
+const ComponentTop = (props) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    }
+
+    const handleSubmit = () => {
+        props.onSubmit(inputValue);
+    }
+
+    return (
+        <div className="top">
+            <h1>Component Top</h1>
+            <div className="border_top">
+                <input type="text" placeholder="Your name here"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                />
+                <button onClick={handleSubmit}>Send data</button>
+            </div>
+        </div>
+    );
+};
+export default ComponentTop;
+import React from "react";
+
+
+
+
+const ComponentBottom = (props) => {
+  return (
+    <div className="bottom">
+      <h1>Component Bottom</h1>  
+      <div className="border_top">
+        <textarea 
+          type="text" 
+          placeholder="Hello VTI"
+          value={props.value} 
+        />
+      </div>
+    </div>
+  );
+};import React, { useState } from "react";
+import ComponentTop from "./ComponentTop";
+import ComponentBottom from "./ComponentBottom";
+import "./componenBottom.css";
+
+
+
+
+
+const FormPage = () => {
+    const [input, setInput] = useState('');
+
+    const handleSubmit = (value) => {
+        setInput(value);
+    }
+
+    return (
+        <div>
+
+            <ComponentTop onSubmit={handleSubmit} />
+            <ComponentBottom
+                value={input}
+            />
+        </div>
+    );
+};
+
+export default FormPage;
+sử dụng props ở componentBottom khoogn sử dụng props ở componentTop
+
+Không, value ở hai đoạn code này khác nhau:
+
+1. value ở ComponentBottom:
+
+- Đây là prop value mà ComponentBottom nhận từ Component cha (FormPage)
+- Giá trị của nó được truyền xuống bởi FormPage qua props 
+
+2. value ở hàm handleSubmit: 
+
+- Đây là tham số của hàm handleSubmit
+- Khi ComponentTop gọi hàm này thông qua onSubmit props
+- Giá trị của nó là giá trị input hiện tại do người dùng nhập
+
+Nên rõ ràng hai value này khác nhau:
+
+- value ở ComponentBottom là giá trị được truyền xuống từ FormPage
+- value ở handleSubmit là giá trị input được gửi lên từ ComponentTop
+
+Mặc dù cùng có tên là value nhưng chúng đại diện cho hai giá trị khác nhau ở những vị trí khác nhau trong luồng dữ liệu của ứng dụng.

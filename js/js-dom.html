@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <p class="child">child 1</p>
+        <p class="child">child 2</p>
+        <p class="child">child 3</p>
+    </div>
+
+
+
+
+
+
+    <script>
+        // const children = document.getElementsByClassName("child");
+        // const firstChild = children[0];
+        // console.log(firstChild);
+
+        // const firstChild = document.querySelector(".child");
+        // const parentDiv = firstChild.parentElement;
+        // console.log(parentDiv);
+
+        const container = document.querySelector(".parent");
+        const containerChildren = container.children;
+        console.log(containerChildren);
+
+        const firstChild = container.firstChildElement;
+        const lastChild = container.lastChildElement;
+        console.log(firstChild);
+        console.log(lastChild);
+    </script>
+
+</body>
+
+</html>

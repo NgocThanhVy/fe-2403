@@ -1,0 +1,31 @@
+.card1 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
+.card-detail p {
+    width: 300px;
+
+}
+
+.card-detail button {
+    color: #fff;
+    background: blue;
+    border: none;
+    padding: 5px 10px;
+
+
+}
+
+.button_group {
+    text-align: right;
+}

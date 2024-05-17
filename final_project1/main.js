@@ -6,10 +6,7 @@ const addContent = document.querySelector(".content");
 const editFormDiv = document.querySelector(".edit-form")
 const detailModalDiv = document.querySelector(".detail-modal");
 const contentProductDiv = document.querySelector(".content-functional-product")
-const contentFuncProductDiv = document.querySelector(".content-functional-product")
-
-
-
+// const contentFuncProductDiv = document.querySelector(".content-functional-product")
 
 const fetchProductList = async () => {
   const res = await fetch(`${BASE_URL}/product`);
@@ -62,31 +59,31 @@ const generateProductCard = (product, index) => {
               <p>Name: ${product.productName}</p>
               <p>Type: ${product.productType}</p>
               <img class='product-image' src='${product.productImage}'/>
-              <p>Price: ${product.price}</p>
+              <p>Price:<s> ${product.price}</s> 
+              <span style="color:red;">
+      ${product.discount ?
+      (product.price - product.price * product.discount / 100).toFixed(5) :
+      product.discount}  $
+      </span>
+      </p>
+              
               <p>isUsed: ${product.isUsed}</p>
               <p>countInStock: ${product.countInStock}</p>
               <p>discount: ${product.discount}</p>
               <div class='actions'>
               <button onclick='openProductDetailModal(${JSON.stringify(
-    product.id
-  )})'>View Detail</button>
+        product.id
+      )})'>View Detail</button>
               <button onclick='openEditProductForm(${JSON.stringify(
-    product
-  )})'>Edit</button>
+        product
+      )})'>Edit</button>
               <button onclick='handleDeleteProduct(${JSON.stringify(
-    product.id
-  )})'>Delete</button>
+        product.id
+      )})'>Delete</button>
           </div>
           </div>      
       `;
 };
-
-
-function openContentProduct() {
-  addProduct.style.display = "block";
-  addUser.style.display = "none";
-}
-
 
 
 const displayProductList = async (productList) => {
@@ -106,6 +103,10 @@ const displayProductList = async (productList) => {
   }
 }
 
+function openContentProduct() {
+  addProduct.style.display = "block";
+  addUser.style.display = "none";
+}
 
 const showCreateProductForm = () => {
   contentDiv.innerHTML = "";
@@ -149,7 +150,8 @@ const handleAddProduct = async () => {
     createFormDiv.appendChild(errorStatus);
   } else {
     // reload the page when creating succefully
-    location.reload();
+    // location.reload();
+    handleOpenProduct()
   }
 };
 
@@ -159,7 +161,7 @@ const closeDetailModal = () => {
 
 const openProductDetailModal = async (selectedProductId) => {
   detailModalDiv.style.display = "block";
-  detailModalDiv.innerHTML = "<h2>Loading Detail...</h2>";
+  // detailModalDiv.innerHTML = "<h2>Loading Detail...</h2>";
 
   const productDetail = await getProductById(selectedProductId);
 
@@ -193,7 +195,8 @@ const handleDeleteProduct = async (productId) => {
     productListDiv.appendChild(errorStatus);
   } else {
     // reload the page when creating succefully
-    location.reload();
+    // location.reload();
+    handleOpenProduct();
   }
 };
 
@@ -229,6 +232,9 @@ const handleCancelEdit = (event) => {
   editFormDiv.style.display = "none";
 };
 
+
+
+
 const handleEditProduct = async () => {
   // get edit-form data
   const productName = document.getElementById("edit-product-name").value;
@@ -254,7 +260,9 @@ const handleEditProduct = async () => {
   const isEdited = await editProduct(updatedProduct);
 
   if (isEdited) {
-    location.reload();
+    // location.reload();
+    handleOpenProduct();
+    editFormDiv.style.display = "none";
   } else {
     const editFormDiv = document.querySelector(".edit-form");
     const errorStatus = document.createElement("h2");
@@ -264,30 +272,24 @@ const handleEditProduct = async () => {
   }
 };
 
-// const renderProductList = (productList) => {
-//     if (productList.length) {
-//         addContent.innerHTML = `
-//         <div class="product-list">
-//           ${productList.map((product) => generateProductCard(product)).join('')}
-//         </div>
-//       `
-//     } else {
-//         addContent.innerHTML = '<h1>No products</h1>'
-//     }
-// }
 const handleOpenProduct = async () => {
-
-
   // console.log(productList)
   addProduct.style.display = "block";
   addUser.style.display = "none";
 
-  // addUser.style.display = "none";
+
   // check is Used & sort
   const productIsUsedCheckbox = document.getElementById('filter-product-is-used')
   const productSortUp = document.querySelector('.sort-up')
   const productSortDown = document.querySelector('.sort-down')
 
+  // fillter products
+  const handleProductFilter = async () => {
+    const isUsed = productIsUsedCheckbox.checked
+    const filteredProductList = isUsed ? productList.filter(product => product.isUsed) : productList
+
+    displayProductList(filteredProductList)
+  }
 
   const productList = await fetchProductList()
   displayProductList(productList)
@@ -305,13 +307,7 @@ const handleOpenProduct = async () => {
     const sortedProductList = productList.sort((a, b) => b.price - a.price)
     displayProductList(sortedProductList)
   }
-  // fillter products
-  const handleProductFilter = async () => {
-    const isUsed = productIsUsedCheckbox.checked
-    const filteredProductList = isUsed ? productList.filter(product => product.isUsed) : productList
 
-    displayProductList(filteredProductList)
-  }
   productSortUp.addEventListener('click', handleSortUp)
   productSortDown.addEventListener('click', handleSortDown)
   productIsUsedCheckbox.addEventListener('change', handleProductFilter)
@@ -358,7 +354,7 @@ const openSearchProducts = (value) => {
   contentFuncProductDiv.style.display = 'block'
 }
 const getValueSearch = () => {
-  const inputElement = document.getElementById('search-product-name')
+  const inputElement = document.getElementById('search-name')
   const searchButton = document.querySelector('.input-search-product i')
 
   const performSearch = () => {
@@ -517,7 +513,23 @@ const handleCancelAddUser = () => {
   // clear current form values
   createFormUserDiv.style.display = "none";
 };
+function checkPassword(password) {
+  // Kiểm tra độ dài
+  if (password.length < 8) {
+    return false;
+  }
 
+  // Kiểm tra chữ cái in hoa
+  var hasUpperCase = false;
+  for (var i = 0; i < password.length; i++) {
+    if (password[i] >= 'A' && password[i] <= 'Z') {
+      hasUpperCase = true;
+      break;
+    }
+  }
+
+  return hasUpperCase;
+}
 const handleAddUser = async () => {
   // get form data
   const name = document.getElementById("user-name").value
@@ -528,6 +540,16 @@ const handleAddUser = async () => {
   const address = document.getElementById("user-address").value
   const avatar = document.getElementById("user-avatar").value
   const city = document.getElementById("user-city").value
+  // Sử dụng hàm kiểm tra
+  // var password = "ExamplePassword123";
+  console.log(checkPassword(password))
+  if (checkPassword(password)) {
+    alert("Mật khẩu hợp lệ!");
+
+  } else {
+    alert("Mật khẩu không hợp lệ!");
+    return
+  }
   const newUser = {
     name,
     email,
@@ -577,6 +599,7 @@ const openUserDetailModal = async (selectedUserId) => {
           <p>Phone: ${userDetail.phone}</p>
           <p>Address: ${userDetail.address}</p>
           <p>Avatar: ${userDetail.avatar}</p>
+          <p>City: ${userDetail.city}</p>
           <button onclick='closeDetailModalUser()'>close</button>
     </div>
   </div>
@@ -593,7 +616,8 @@ const handleDeleteUser = async (userId) => {
     userListDiv.appendChild(errorStatus)
   } else {
     // reload the page when creating succefully
-    location.reload()
+    // location.reload()
+    handleOpenUser();
   }
 };
 
@@ -628,10 +652,11 @@ const handleEditUser = async () => {
   const name = document.getElementById("edit-user-name").value
   const email = document.getElementById("edit-user-email").value
   const password = document.getElementById("edit-user-password").value
-  const isAdmin = document.getElementById("edit-user-is-admin").check
+  const isAdmin = document.getElementById("edit-user-is-admin").checked
   const phone = document.getElementById("edit-user-phone").value
   const address = document.getElementById("edit-user-address").value
   const avatar = document.getElementById("edit-user-avatar").value
+  const city = document.getElementById("edit-user-city").value
   const editedUser = {
     id: localStorage.getItem("selected-user-id"),
     name,
@@ -641,11 +666,14 @@ const handleEditUser = async () => {
     phone,
     address,
     avatar,
+    city
   }
 
   const isEdited = await editUser(editedUser)
   if (isEdited) {
-    location.reload()
+    // location.reload()
+    handleOpenUser();
+    editUserFormDiv.style.display = "none";
   } else {
     const formEditUserDiv = document.querySelector('.form-edit-user')
 
@@ -712,15 +740,17 @@ const searchUsers = async (nameSearch) => {
   contentUserDiv.style.display = 'block'
 }
 const getValueSearchUsers = () => {
-  const inputElement = document.getElementById('search-user-name')
+  const inputElement = document.getElementById('search-name-user')
   const searchButton = document.querySelector('.input-search-user i')
-  console.log('searchValue')
+
 
   const performSearch = () => {
     const searchValue = inputElement.value
     // Thực hiện hành động tìm kiếm với giá trị searchValue ở đây
-    console.log(searchValue)
+    console.log('searchValue 1', searchValue)
     searchUsers(searchValue)
+    addContentUser.style.display = 'none'
+
   }
 
   searchButton.addEventListener('click', performSearch)
@@ -731,3 +761,6 @@ const getValueSearchUsers = () => {
     }
   })
 }
+
+
+

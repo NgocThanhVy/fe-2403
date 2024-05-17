@@ -3,6 +3,7 @@ import "../card/person.css";
 
 
 const PersonDisplay = (props) => {
+
     return (
         <div className='person'>
             <p>Name:{props?.person?.name}</p>

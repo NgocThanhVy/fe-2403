@@ -4,7 +4,7 @@ import CardItem from "./CardItem";
 
 
 
-const CardGroup = (props) => {
+const CardGroup = () => {
     const cards = [
         {
             id: "1",

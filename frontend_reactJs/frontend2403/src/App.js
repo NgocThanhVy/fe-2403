@@ -15,6 +15,15 @@ import PersonDisplay from "./components/card/PersonDisplay";
 import HomePage from "./components/HomePage/HomePage";
 import Person from './components/card/Person';
 import FormPage from "./components/ComponentBottom/FormPage";
+import ResultComponent from "./components/InfoPage/ResultComponent";
+import InfoPage from "./components/InfoPage/InfoPage";
+
+import InfoPageCF from "./components/SendDataComponent/InfoPageCF";
+import CardItem from "./components/card/CardItem";
+import Persons from "./components/card/Persons";
+import Body from "./components/Body/Body";
+import Send from "./components/SendData/Send";
+import Convert from "./components/Convert/Convert";
 
 
 const App = () => {
@@ -98,22 +107,27 @@ const App = () => {
         </div>
       </div>
 
-      <CardComponent />
+      {/* <CardComponent /> */}
       {/* <Card1 /> */}
-      <CardGroup />
+      {/* <CardGroup />
       <CardList />
       <Person />
       < Fragment />
-      <Form />
+      <Form /> */}
       {/* <FormSubmit /> */}
 
-      <Question4 />
+      {/* <Question4 />
       <Question2 />
       <Question6 />
       <HomePage />
 
 
-      <FormPage />
+      <FormPage /> */}
+      <InfoPage />
+      <InfoPageCF />
+      <Body />
+      <Send />
+      <Convert />
     </div >
   )
 }
