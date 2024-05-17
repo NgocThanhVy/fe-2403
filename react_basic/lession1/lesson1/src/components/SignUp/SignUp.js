@@ -13,9 +13,10 @@ const SignUp = () => {
 
 
     const handleChange = (e) => {
-        // const { name, value } = e.target;
-        setFormData([...formData, e.target.value]);
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -52,6 +53,7 @@ const SignUp = () => {
                     <label htmlFor="fullname">Fullname</label>
                     <input
                         type="text"
+                        name="fullname"
                         placeholder="enter fullname"
                         value={formData.fullname}
                         onChange={handleChange}
@@ -62,6 +64,7 @@ const SignUp = () => {
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
+                        name="email"
                         placeholder="enter mail"
                         value={formData.email}
                         onChange={handleChange}
@@ -72,6 +75,7 @@ const SignUp = () => {
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
+                        name="password"
                         placeholder="enter password"
                         value={formData.password}
                         onChange={handleChange}
@@ -82,6 +86,7 @@ const SignUp = () => {
                     <label htmlFor="confirmPassword">Confirm Password</label>
                     <input
                         type="password"
+                        name="confirmPassword"
                         placeholder="enter password"
                         value={formData.confirmPassword}
                         onChange={handleChange}
@@ -92,6 +97,7 @@ const SignUp = () => {
                     <label htmlFor="birthday">Birthday</label>
                     <input
                         type="date"
+                        name="birthday"
                         value={formData.birthday}
                         onChange={handleChange}
 
