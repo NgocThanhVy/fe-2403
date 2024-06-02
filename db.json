@@ -1,0 +1,100 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "email": "random1@gmail.com",
+            "username": "user1",
+            "fullName": "Random User 1",
+            "department": "Sales",
+            "position": "Assistant"
+        },
+        {
+            "id": "2",
+            "email": "random1@gmail.com",
+            "username": "user1",
+            "fullName": "Random User 1",
+            "department": "Sales",
+            "position": "Assistant"
+        },
+        {
+            "id": "3",
+            "email": "random2@gmail.com",
+            "username": "user2",
+            "fullName": "Random User 2",
+            "department": "Finance",
+            "position": "Assistant"
+        },
+        {
+            "id": "4",
+            "email": "random3@gmail.com",
+            "username": "user3",
+            "fullName": "Random User 3",
+            "department": "HR",
+            "position": "Manager"
+        },
+        {
+            "id": "5",
+            "email": "random4@gmail.com",
+            "username": "user4",
+            "fullName": "Random User 4",
+            "department": "IT",
+            "position": "Developer"
+        },
+        {
+            "id": "6",
+            "email": "random5@gmail.com",
+            "username": "user5",
+            "fullName": "Random User 5",
+            "department": "Marketing",
+            "position": "Assistant"
+        },
+        {
+            "id": "7",
+            "email": "random6@gmail.com",
+            "username": "user6",
+            "fullName": "Random User 6",
+            "department": "Finance",
+            "position": "Assistant"
+        },
+        {
+            "id": "8",
+            "email": "random7@gmail.com",
+            "username": "user7",
+            "fullName": "Random User 7",
+            "department": "Sales",
+            "position": "Manager"
+        },
+        {
+            "id": "9",
+            "email": "random8@gmail.com",
+            "username": "user8",
+            "fullName": "Random User 8",
+            "department": "HR",
+            "position": "Manager"
+        },
+        {
+            "id": "10",
+            "email": "random9@gmail.com",
+            "username": "user9",
+            "fullName": "Random User 9",
+            "department": "IT",
+            "position": "Developer"
+        },
+        {
+            "id": "12",
+            "email": "random11@gmail.com",
+            "username": "user11",
+            "fullName": "Random User 11",
+            "department": "Finance",
+            "position": "Assistant"
+        },
+        {
+            "id": "13",
+            "email": "random12@gmail.com",
+            "username": "user12",
+            "fullName": "Random User 12",
+            "department": "Sales",
+            "position": "Manager"
+        }
+    ]
+}
