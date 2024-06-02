@@ -1,0 +1,250 @@
+.frame {
+  display: flex;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.frame-left {
+  padding-right: 40px;
+  border-right: 2px solid #ccc;
+  width: 300px;
+}
+
+.frame-left h1 {
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  cursor: pointer;
+
+
+}
+
+.button-icon {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background-color: #ccc;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+
+.button-icon:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.frame-right {
+  width: 100%;
+
+
+}
+
+.box-product {
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: none;
+}
+
+.box-user {
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: none;
+}
+
+.frame-right h1 {
+  margin-bottom: 50px;
+}
+
+#add-product-button,
+#add-user-button {
+  height: 50px;
+  border: 1px solid #ccc;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+#add-product-button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+#add-user-button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.title {
+  padding-left: 50px;
+}
+
+.title-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.user-card,
+.product-card {
+  border: 1px solid blue;
+  width: 320px;
+  padding: 15px;
+}
+
+.user-image,
+.product-image {
+  height: 200px;
+  width: 100%;
+}
+
+/* .product-detail .product-image {
+  width: fit-content;
+} */
+
+.product-index {
+  text-align: center;
+}
+
+.user-list,
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 15px;
+  /* margin-top: 100px; */
+
+}
+
+.actions button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.create-form,
+.edit-form,
+.detail-modal {
+  display: none;
+
+}
+
+.create-form div {
+  padding: 10px 20px;
+}
+
+/* .modal-box, */
+#form {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* .modal-box, */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  /* Added to limit maximum width of the modal */
+}
+
+.form-content button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.produc-form-actions button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.functional-user,
+.functional-product {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: baseline;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content-functional-user,
+.content-functional-product {
+  /* border: 1px solid gray;
+  border-radius: 6px; */
+  display: none;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.sort-product button {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+}
+
+.sort-product button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+#search-name {
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.icon_search {
+  border-left: 1px solid #000;
+  padding-left: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon_search:hover {
+  color: blue;
+
+
+}
+
+.input-search-user,
+.input-search-product {
+  position: relative;
+}
+
+.input-search-user input,
+.input-search-product input {
+  padding-right: 30px;
+  /* Để tạo không gian cho biểu tượng */
+}
+
+.input-search-user i,
+.input-search-product i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 20px;
+}

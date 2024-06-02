@@ -1,0 +1,23 @@
+.card-container {
+    width: 60%;
+    margin: 50px auto;
+    display: flex;
+    column-gap: 30PX;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+p {
+    margin: 0;
+}
+
+.card-container .card__img img {
+    width: 100%;
+    object-fit: cover;
+}

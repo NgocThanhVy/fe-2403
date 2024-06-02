@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "3",
+      "email": "mm@gmail.com",
+      "userName": "minaa",
+      "fullName": "minaa334",
+      "department": "marketing",
+      "position": "dev"
+    },
+    {
+      "id": "1",
+      "email": "laptopshop10@gmail.com",
+      "userName": "laptop",
+      "fullName": "shop",
+      "department": "marketing",
+      "position": "dev"
+    },
+    {
+      "id": "2",
+      "email": "nhungoc4188@gmail.com",
+      "userName": "laptop",
+      "fullName": "kk",
+      "department": "marketing",
+      "position": "sale"
+    }
+  ]
+}

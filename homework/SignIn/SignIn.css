@@ -1,0 +1,36 @@
+#main {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    
+}
+
+.sign {
+    padding: 30px;
+    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.3);
+}
+.sign p {
+    font-size: 16px
+}
+
+.sign Input {
+    margin-bottom: 10px ; 
+    padding: 8px ; 
+    background: rgba(255, 255, 255, 0.5)
+}
+
+.sign button {
+    color: #000 ;
+     font-size: 15px ; 
+     font-weight: 700;
+     padding: 5px;
+     cursor: pointer;
+     background-color: rgba(132, 122, 122, 0.5);
+}
+
+.sign button:hover {
+    background-color: #fff;
+    color: blue;
+}

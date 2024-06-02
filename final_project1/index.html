@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Finally project 1</title>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="frame-left">
+      <h1>Menu</h1>
+      <div class="list">
+        <div class="button-icon btn-post" onclick="handleOpenProduct()">
+          <i class='bx bxs-hand-up'></i>
+          <span class="pointer">Product</span>
+        </div>
+        <div class="button-icon" onclick="handleOpenUser()">
+          <i class='bx bxs-user'></i>
+          <span class="pointer">User</span>
+        </div>
+      </div>
+    </div>
+    <div class="frame-right">
+      <div class="">
+        <div class="box-product">
+          <div class="title-product">
+            <h1>Product</h1>
+            <button onclick="showCreateProductForm()" id="add-product-button">
+              Create Product
+            </button>
+          </div>
+          <div class="functional-product">
+            <div class="filter-product">
+              Is Used:<input id="filter-product-is-used" type="checkbox" />
+            </div>
+            <div class="sort-product">
+              Sắp xếp
+              <button class="sort-up"><i class='bx bx-up-arrow-alt'></i>&nbsp;</button>
+              <button class="sort-down"><i class='bx bx-down-arrow-alt'></i></i></button>
+            </div>
+            <div class="input-search-product">
+              <input id="search-name" type="text" placeholder="search name product">
+              <i class='icon_search bx bx-search-alt-2 large-icon' onclick="getValueSearch()"></i>
+            </div>
+          </div>
+
+          <div class="content-functional-product"></div>
+          <div class="content-product"></div>
+
+          <div class="content"></div>
+        </div>
+        <div class="create-form" id="form">
+          <div class="form-content">
+            <div>
+              Name:
+              <input id="product-name" type="text" placeholder="enter product name" />
+            </div>
+            <div>
+              Type:
+              <input id="product-type" type="text" placeholder="enter product type" />
+            </div>
+            <div>
+              Price:
+              <input id="product-price" type="number" placeholder="enter price" />
+            </div>
+            <div>
+              Image:
+              <input id="product-image" type="text" placeholder="enter image url" />
+            </div>
+            <div>
+              Is Used:
+              <input id="is-used" type="checkbox" placeholder="enter image url" />
+            </div>
+            <div>
+              Count In Stock:
+              <input id="count-in-stock" type="number" placeholder="enter image url" />
+            </div>
+            <div>
+              Discount (%):
+              <input id="discount" type="number" placeholder="enter image url" />
+            </div>
+            <div class="produc-form-actions">
+              <button onclick="handleCancelAdd()">Cancel</button>
+              <button onclick="handleAddProduct()">Create</button>
+            </div>
+          </div>
+        </div>
+        <div id="form" class="edit-form">
+          <div class="form-content">
+            <div>
+              Name:
+              <input id="edit-product-name" type="text" placeholder="enter product name" />
+            </div>
+            <div>
+              Type:
+              <input id="edit-product-type" type="text" placeholder="enter product type" />
+            </div>
+            <div>
+              Price:
+              <input id="edit-product-price" type="number" placeholder="enter price" />
+            </div>
+            <div>
+              Image:
+              <input id="edit-product-image" type="text" placeholder="enter image url" />
+            </div>
+            <div>
+              Is Used:
+              <input id="edit-is-used" type="checkbox" placeholder="enter image url" />
+            </div>
+            <div>
+              Count In Stock:
+              <input id="edit-count-in-stock" type="number" placeholder="enter image url" />
+            </div>
+            <div>
+              Discount (%):
+              <input id="edit-discount" type="number" placeholder="enter image url" />
+            </div>
+            <div class="produc-form-actions">
+              <button onclick="handleCancelEdit(event)">Cancel</button>
+              <button onclick="handleEditProduct()">Edit</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="modal-box"></div>
+
+
+      <div class="box-user">
+        <div class="title-user">
+          <h1>Users</h1>
+          <button type="button" onclick="showCreateUserForm()" id="add-user-button">
+            Create user
+          </button>
+        </div>
+        <div class="functional-user">
+          <div class="filter-user">
+            Is Admin:<input id="filter-user-is-admin" type="checkbox" />
+          </div>
+          <!-- <div class="sort-user">
+            <i class='bx bx-sort-up large-icon'></i>&nbsp;
+            <i class='bx bx-sort-down large-icon'></i>
+          </div> -->
+          <div class="input-search-user">
+
+            <input id="search-name-user" type="text" placeholder="search name user">
+            <i class='icon_search bx bx-search-alt-2 large-icon' onclick="getValueSearchUsers()"></i>
+          </div>
+        </div>
+
+        <div class="content-functional-user"></div>
+
+        <div class="contentUser"></div>
+      </div>
+
+    </div>
+    <div class="form-create-user" id="form">
+      <div class="form-content">
+        <h2>Create user</h2>
+
+        <div>
+          Name:
+          <input id="user-name" type="text" placeholder="enter user name" />
+        </div>
+        <div>
+          Email:
+          <input id="user-email" type="text" placeholder="enter email" />
+        </div>
+        <div>
+          Password:
+          <input id="user-password" type="text" placeholder="enter password" />
+        </div>
+
+        <div>
+          Is Admin:
+          <input id="user-is-admin" type="checkbox" />
+        </div>
+        <div>
+          Phone:
+          <input id="user-phone" type="text" placeholder="enter user phone" />
+        </div>
+        <div>
+          Address:
+          <input id="user-address" type="text" placeholder="enter user address" />
+        </div>
+        <div>
+          Avatar:
+          <input id="user-avatar" type="text" placeholder="enter user avatar" />
+        </div>
+        <div>
+          city:
+          <input id="user-city" type="text" placeholder="enter user city" />
+        </div>
+        <div class="user-form-actions">
+          <button onclick="handleCancelAddUser()">Cancel</button>
+          <button onclick="handleAddUser()">Create</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- form edit user -->
+    <div class="form-edit-user" id="form">
+      <div class="form-content">
+        <h2>Edit user</h2>
+
+        <div>
+          Name:
+          <input id="edit-user-name" type="text" placeholder="enter user name" />
+        </div>
+        <div>
+          Email:
+          <input id="edit-user-email" type="text" placeholder="enter email" />
+        </div>
+        <div>
+          Password:
+          <input id="edit-user-password" type="text" placeholder="enter password" />
+        </div>
+
+        <div>
+          Is Admin:
+          <input id="edit-user-is-admin" type="checkbox" placeholder="enter user Is Admin" />
+        </div>
+        <div>
+          Phone:
+          <input id="edit-user-phone" type="text" placeholder="enter user phone" />
+        </div>
+        <div>
+          Address:
+          <input id="edit-user-address" type="text" placeholder="enter user address" />
+        </div>
+        <div>
+          Avatar:
+          <input id="edit-user-avatar" type="text" placeholder="enter user avatar" />
+        </div>
+        <div>
+          city:
+          <input id="edit-user-city" type="text" placeholder="enter user city" />
+        </div>
+        <div class="user-form-actions">
+          <button onclick="handleCancelEditUser(event)">Cancel</button>
+          <button onclick="handleEditUser()">Edit</button>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="detail-modal" id="form">
+      <!-- Product Detail -->
+    </div>
+  </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
